@@ -19,6 +19,7 @@ a {
 
 .container {
   width: 100%;
+  margin: 0 auto;
 }
 
 .file {
@@ -35,8 +36,4 @@ a {
 
 .empty-block {
   margin: 200px;
-}
-
-.ant-tabs-nav-list {
-  margin: 0 auto;
 }
