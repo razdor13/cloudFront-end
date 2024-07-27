@@ -1,4 +1,5 @@
 import {LoginForm} from "@/components/LoginForm";
+import { RegisterForm } from "@/components/RegisterForm";
 import {Tabs} from "antd";
 
 const AuthPage = () => {
@@ -11,7 +12,7 @@ const AuthPage = () => {
                         {
                             label: "Registration",
                             key: "2",
-                            children: <h1>registration</h1>,
+                            children: <RegisterForm/>,
                         },
                     ]}
                 />
