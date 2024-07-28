@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { checkAuth } from "@/utils/checkAuth";
 
 async function DashboardPage() {
@@ -6,7 +7,7 @@ async function DashboardPage() {
 
   return (
     <>
-      132132
+      <Header/>
     </>
   );
 }

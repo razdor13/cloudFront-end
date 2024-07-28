@@ -1,10 +1,11 @@
+import Header from "@/components/Header";
 
 function DashboardPage() {
 
 
   return (
     <>
-      132132
+      <Header/>
     </>
   );
 }
