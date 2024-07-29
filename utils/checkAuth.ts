@@ -17,7 +17,7 @@ export const checkAuth = async () => {
     axios.defaults.headers.Authorization = "Bearer " + token;
 
     // Attempt to fetch user data
-    await Api.auth.getMe();
+    // await Api.auth.getMe();
 
     // If successful, return true
     return true;

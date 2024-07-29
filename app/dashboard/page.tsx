@@ -1,13 +1,13 @@
-import Header from "@/components/Header";
+
+import Dasboard from "@/components/Dashboard";
 import { checkAuth } from "@/utils/checkAuth";
 
 async function DashboardPage() {
-  console.log(123)
   await checkAuth();
 
   return (
     <>
-      <Header/>
+      <Dasboard/>
     </>
   );
 }
