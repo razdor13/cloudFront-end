@@ -1,10 +1,13 @@
+
 import styles from '@/app/Home.module.scss'
 import { DeleteOutlined, FileImageOutlined, FileOutlined } from '@ant-design/icons';
 
 import { Menu } from 'antd';
 import { UploadButton } from '../UploadButton';
+import { FileList } from '../FileList';
 
-const Dasboard = () => {
+const Dasboard: React.FC = (items) => {
+    console.log(items)
     return (
         <main className={styles.dashboardContainer}>
         <div className={styles.sidebar}>
@@ -36,7 +39,9 @@ const Dasboard = () => {
           />
         </div>
   
-        <div className="container">312</div>
+        <div className="container">
+          <FileList items={items}/>
+        </div>
       </main>
     );
 };

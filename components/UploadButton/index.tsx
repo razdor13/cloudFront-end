@@ -14,7 +14,7 @@ export const UploadButton = () => {
         try {
             await Api.files.uploadFile(options);
 
-            // setFileList([]);
+            setFileList([]);
             // window.location.reload();
         } catch (err) {
             notification.error({

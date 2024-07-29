@@ -12,17 +12,10 @@ export const checkAuth = async () => {
     if (!token) {
       throw new Error('No token found');
     }
-
-    // Set the token in the axios header
     axios.defaults.headers.Authorization = "Bearer " + token;
-
-    // Attempt to fetch user data
-    // await Api.auth.getMe();
-
-    // If successful, return true
+    await Api.auth.getMe();
     return true;
   } catch (err) {
-    // On error, redirect to the authentication page
     redirect('/dashboard/auth');
   }
 };
