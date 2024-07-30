@@ -1,28 +1,29 @@
 "use client"
-
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./FileList.module.scss";
 import { FileCard } from "@/components/FileCard";
-import { FileItem } from "@/api/dto/files.dto"; // Ensure this type is correctly defined
+import { FileItem } from "@/api/dto/files.dto";
+import Selecto from "react-selecto";
 
 export type FileSelectType = "select" | "unselect";
 
 interface FileListProps {
   items: FileItem[];
+  onFileSelect: (id: number, type: FileSelectType) => void;
 }
 
-export const FileList: React.FC<FileListProps> = ({ items }) => {
+export const FileList: React.FC<FileListProps> = ({ items, onFileSelect }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  console.log(containerRef)
   return (
-    <div className={styles.root}>
+    <div ref={containerRef} className={`${styles.root} files`}>
       {items.map((item) => (
         <div data-id={item.id} key={item.id} className="file">
           <FileCard filename={item.filename} originalName={item.originalName} />
         </div>
       ))}
-
-      {/* Uncomment and use if Selecto is needed
       <Selecto
-        container=".files"
+        container={containerRef.current}
         selectableTargets={[".file"]}
         selectByClick
         hitRate={10}
@@ -40,7 +41,6 @@ export const FileList: React.FC<FileListProps> = ({ items }) => {
           });
         }}
       />
-      */}
     </div>
   );
 };

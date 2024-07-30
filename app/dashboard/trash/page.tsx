@@ -1,8 +1,9 @@
 import React from "react";
-import Dashboard from "@/components/Dashboard";
 import { checkAuth } from "@/utils/checkAuth";
 import * as Api from "@/api";
 import { FileItem } from "@/api/dto/files.dto";
+import { FileList } from "@/components/FileList";
+import { Files } from "@/modules/Files";
 
 
 
@@ -12,7 +13,7 @@ const DashboardTrash: React.FC = async () => {
     console.log(file , 'foto')
   return (
     <>
-      <Dashboard items={file} />
+      <Files items={file}/>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FileActions.module.scss";
+import styles from "./FileAction.module.scss"
 import { Button, Popconfirm } from "antd";
 
 interface FileActionsProps {

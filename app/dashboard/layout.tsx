@@ -1,23 +1,22 @@
-'use client'
+'use client';
 
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation'; // Використовуйте з нового App Router
 import styles from '@/app/Home.module.scss';
 import { DeleteOutlined, FileImageOutlined, FileOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { UploadButton } from '../UploadButton';
-import { FileList } from '../FileList';
 import { FileItem } from '@/api/dto/files.dto'; // Упевніться, що FileItem визначено відповідним чином
-import { FileActions } from '../FileAction';
+import { UploadButton } from '@/components/UploadButton';
+
 
 interface DashboardProps {
-  items: FileItem[];
+  children: React.ReactNode; // Замість items, приймаємо дітей
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ items }) => {
+const Dashboard: React.FC<DashboardProps> = ({ children }) => {
   const router = useRouter();
-  const pathname = usePathname() || ''
-  console.log(pathname)
+  const pathname = usePathname() || '';
+
   return (
     <main className={styles.dashboardContainer}>
       <div className={styles.sidebar}>
@@ -30,7 +29,7 @@ const Dashboard: React.FC<DashboardProps> = ({ items }) => {
             {
               key: `/dashboard`,
               icon: <FileOutlined />,
-              label: `Файлы`,
+              label: `Файли`,
               onClick: () => router.push('/dashboard'),
             },
             {
@@ -50,7 +49,7 @@ const Dashboard: React.FC<DashboardProps> = ({ items }) => {
       </div>
 
       <div className="container">
-        <FileList items={items}/>
+        {children}
       </div>
     </main>
   );
