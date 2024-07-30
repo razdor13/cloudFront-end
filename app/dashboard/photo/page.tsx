@@ -6,10 +6,10 @@ import { FileItem } from "@/api/dto/files.dto";
 
 
 
-const DashboardPage: React.FC = async () => {
+const DashboardPhoto: React.FC = async () => {
   await checkAuth();
-  const file: FileItem[] = await Api.files.getAll();  // Ensure getAll() returns FileItem[]
-
+  const file: FileItem[] = await Api.files.getAll('photos');  // Ensure getAll() returns FileItem[]
+    console.log(file , 'foto')
   return (
     <>
       <Dashboard items={file} />
@@ -17,4 +17,4 @@ const DashboardPage: React.FC = async () => {
   );
 }
 
-export default DashboardPage;
+export default DashboardPhoto;

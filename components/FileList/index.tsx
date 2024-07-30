@@ -3,23 +3,25 @@
 import React from "react";
 import styles from "./FileList.module.scss";
 import { FileCard } from "@/components/FileCard";
-import { FileItem } from "@/api/dto/files.dto";
-// import Selecto from "react-selecto";
+import { FileItem } from "@/api/dto/files.dto"; // Ensure this type is correctly defined
 
 export type FileSelectType = "select" | "unselect";
 
+interface FileListProps {
+  items: FileItem[];
+}
 
-
-export const FileList: React.FC = ({items: itemsObject}) => {
+export const FileList: React.FC<FileListProps> = ({ items }) => {
   return (
     <div className={styles.root}>
-      {itemsObject.items.map((item: any) => (
+      {items.map((item) => (
         <div data-id={item.id} key={item.id} className="file">
           <FileCard filename={item.filename} originalName={item.originalName} />
         </div>
       ))}
 
-      {/* <Selecto
+      {/* Uncomment and use if Selecto is needed
+      <Selecto
         container=".files"
         selectableTargets={[".file"]}
         selectByClick
@@ -37,7 +39,8 @@ export const FileList: React.FC = ({items: itemsObject}) => {
             onFileSelect(Number(el.dataset["id"]), "unselect");
           });
         }}
-      /> */}
+      />
+      */}
     </div>
   );
 };

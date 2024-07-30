@@ -5,7 +5,7 @@ import { FileItem } from "./dto/files.dto";
 type FileType = "all" | "photos" | "trash";
 
 export const getAll = async (type: FileType = "all"): Promise<FileItem[]> => {
-  console.log(1)
+
   return (await axios.get("/files?type=" + type)).data;
 };
 
