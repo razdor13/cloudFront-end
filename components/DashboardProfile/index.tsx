@@ -14,7 +14,7 @@ const DashboardProfile: React.FC<Props> = ({ userData }) => {
   const onClickLogout = async () => {
     if (window.confirm("Вы действительно хотите выйти?")) {
       Api.auth.logout();
-      location.href = "/dashboard/auth";
+      location.href = "/auth";
     }
   };
 

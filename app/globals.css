@@ -37,3 +37,6 @@ a {
 .empty-block {
   margin: 200px;
 }
+.ant-upload-wrapper {
+  margin: 20px;
+}

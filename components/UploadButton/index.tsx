@@ -11,16 +11,18 @@ export const UploadButton = () => {
     const [fileList, setFileList] = React.useState<UploadFile[]>([]);
 
     const onUploadSuccess = async (options: any) => {
+
         try {
             await Api.files.uploadFile(options);
 
             setFileList([]);
             window.location.reload();
         } catch (err) {
+            
             notification.error({
-                message: "Ошибка!",
-                description: "Не удалось загрузить файл",
-                duration: 2,
+                message: "Помилка!",
+                description: "НЕ ВДАЛОСЬ ЗАВАНТАЖИТИ ",
+                duration: 4,
             });
         }
     };
@@ -33,7 +35,7 @@ export const UploadButton = () => {
             className={styles.upload}
         >
             <Button type="primary" icon={<CloudUploadOutlined />} size="large">
-                Загрузить файл
+            ⬇️ Файли
             </Button>
         </Upload>
     );

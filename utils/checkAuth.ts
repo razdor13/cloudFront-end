@@ -16,6 +16,6 @@ export const checkAuth = async () => {
     await Api.auth.getMe();
     return true;
   } catch (err) {
-    redirect('/dashboard/auth');
+    redirect('/auth');
   }
 };

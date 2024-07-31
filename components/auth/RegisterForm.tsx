@@ -28,7 +28,7 @@ export const RegisterForm: React.FC = () => {
             console.log('Registerform',error)
             notification.error({
                 message : 'Не вдалось!',
-                description: 'ні',
+                description: 'Щось пішло не так',
                 duration: 2
             })
         }
@@ -52,7 +52,7 @@ export const RegisterForm: React.FC = () => {
                 <FormItem
                     label="E-Mail"
                     name="email"
-                    rules={[{required: true, message: "Укажите почту"}]}
+                    rules={[{required: true, message: "Потрібна пошта"}]}
                 >
                     <Input />
                 </FormItem>
@@ -60,7 +60,7 @@ export const RegisterForm: React.FC = () => {
                 <FormItem
                     label="Пароль"
                     name="password"
-                    rules={[{required: true, message: "Укажите пароль"}]}
+                    rules={[{required: true, message: "Потрібен пароль"}]}
                 >
                     <Input.Password />
                 </FormItem>
