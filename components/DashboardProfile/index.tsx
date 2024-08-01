@@ -26,7 +26,7 @@ const DashboardProfile: React.FC<Props> = ({ userData }) => {
         ID: <b>{userData.id}</b>
       </p>
       <p>
-        Повне ім'я: <b>{userData.fullName}</b>
+        Повне імя: <b>{userData.fullName}</b>
       </p>
       <p>
         E-Mail: <b>{userData.email}</b>
